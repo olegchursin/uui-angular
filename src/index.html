@@ -1,13 +1,22 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>UuiAngular</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
-  <app-root></app-root>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>UuiAngular</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+    <!-- United UI -->
+    <!-- contains all css variables used across all components. -->
+    <uui-global-variables-theme></uui-global-variables-theme>
+    <uui-base-theme></uui-base-theme>
+    <!-- contains colors for the default theme. -->
+    <uui-default-theme></uui-default-theme>
+    <!-- contains colors for the inverse theme. This is only required if you are using the inverse version of components -->
+    <uui-inverse-theme></uui-inverse-theme>
+  </head>
+  <body>
+    <app-root></app-root>
+  </body>
 </html>

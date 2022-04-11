@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'uui-angular';
+  username: string = '';
+
+  public handleButtonClick() {
+    console.log('username', this.username);
+    alert('Button clicked');
+  }
 }

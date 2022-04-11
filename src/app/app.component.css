@@ -1,0 +1,39 @@
+.wrapper {
+  display: grid;
+  justify-content: center;
+}
+
+.button-group {
+  display: flex;
+  gap: 1em;
+}
+
+article {
+  margin: 3em 0;
+}
+
+code {
+  font-family: monospace;
+  font-size: inherit;
+}
+p > code,
+li > code,
+dd > code,
+td > code {
+  background: #2e2e2e;
+  color: #f8f8f8;
+  word-wrap: break-word;
+  box-decoration-break: clone;
+  padding: 0.1rem 0.3rem 0.2rem;
+  border-radius: 0.2rem;
+}
+pre code {
+  display: block;
+  background: #2e2e2e;
+  color: #f8f8f8;
+  border-radius: 0.2rem;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: scroll;
+  min-width: 100px;
+  padding: 0;
+}
