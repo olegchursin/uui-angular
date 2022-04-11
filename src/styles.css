@@ -71,6 +71,8 @@ h6 {
   isolation: isolate;
 }
 
+/* End of Modern CSS Reset */
+
 html {
   opacity: 0;
   transition: opacity 0.5s;
@@ -84,4 +86,64 @@ body {
 .hydrated {
   visibility: visible;
   opacity: 1;
+}
+
+.wrapper {
+  display: grid;
+  justify-content: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.gap {
+  gap: 1em;
+}
+
+.checkboxes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+.mx-1 {
+  margin-block-start: 1rem;
+  margin-block-end: 1rem;
+}
+
+article {
+  margin: 3em 0;
+}
+
+code {
+  font-family: monospace;
+  font-size: inherit;
+}
+p > code,
+li > code,
+dd > code,
+td > code {
+  background: #2e2e2e;
+  color: #f8f8f8;
+  word-wrap: break-word;
+  box-decoration-break: clone;
+  padding: 0.1rem 0.3rem 0.2rem;
+  border-radius: 0.2rem;
+}
+pre code {
+  display: block;
+  background: #2e2e2e;
+  color: #f8f8f8;
+  border-radius: 0.2rem;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: scroll;
+  min-width: 100px;
+  padding: 0;
 }

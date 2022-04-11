@@ -20,54 +20,58 @@
     <li><a class="uui-link" href="#uui-alert">Alert</a></li>
     <li><a class="uui-link" href="#uui-button">Button</a></li>
     <li><a class="uui-link" href="#uui-input">Input</a></li>
+    <li><a class="uui-link" href="#uui-checkbox">Checkbox</a></li>
     <li><a class="uui-link" href="#uui-switch">Switch</a></li>
   </ul>
 
   <article>
-    <h6 id="uui-button">Alert</h6>
-    <div class="flex flex-column gap">
-      <uui-alert [header]="'Notification'">Alert slotted content</uui-alert>
-      <uui-alert [variant]="'success'" [header]="'Success'"
-        >Alert slotted content</uui-alert
-      >
-      <uui-alert [variant]="'caution'" [header]="'Caution'"
-        >Alert slotted content</uui-alert
-      >
-      <uui-alert [variant]="'error'" [header]="'Error'"
-        >Alert slotted content</uui-alert
-      >
-    </div>
+    <uui-card>
+      <h6 id="uui-button">Alert</h6>
+      <div class="flex flex-column gap">
+        <uui-alert [header]="'Notification'">Alert slotted content</uui-alert>
+        <uui-alert [variant]="'success'" [header]="'Success'"
+          >Alert slotted content</uui-alert
+        >
+        <uui-alert [variant]="'caution'" [header]="'Caution'"
+          >Alert slotted content</uui-alert
+        >
+        <uui-alert [variant]="'error'" [header]="'Error'"
+          >Alert slotted content</uui-alert
+        >
+      </div>
 
-    <pre>
-      <code>
-          &lt;uui-alert
-            [variant]="'notification'"
-            [header]="'Notification'"
-          &gt;
-            Alert slotted content
-          &lt;/uui-alert&gt;
-      </code>
-    </pre>
+      <pre>
+          <code>
+              &lt;uui-alert
+                [variant]="'notification'"
+                [header]="'Notification'"
+              &gt;
+                Alert slotted content
+              &lt;/uui-alert&gt;
+          </code>
+        </pre>
+    </uui-card>
   </article>
 
   <article>
-    <h6 id="uui-button">Button</h6>
-    <div class="flex gap">
-      <uui-button (click)="handleButtonClick()"
-        >Click Me I'm Default</uui-button
-      >
-      <uui-button variant="subtle" (click)="handleButtonClick()"
-        >Click Me I'm Subtle</uui-button
-      >
-      <uui-button variant="ghost" (click)="handleButtonClick()"
-        >Click Me I'm Ghost</uui-button
-      >
-      <uui-button variant="prominent" (click)="handleButtonClick()"
-        >I'm Prominent, Don't Use Me</uui-button
-      >
-    </div>
+    <uui-card>
+      <h6 id="uui-button">Button</h6>
+      <div class="flex gap">
+        <uui-button (click)="handleButtonClick()"
+          >Click Me I'm Default</uui-button
+        >
+        <uui-button variant="subtle" (click)="handleButtonClick()"
+          >Click Me I'm Subtle</uui-button
+        >
+        <uui-button variant="ghost" (click)="handleButtonClick()"
+          >Click Me I'm Ghost</uui-button
+        >
+        <uui-button variant="prominent" (click)="handleButtonClick()"
+          >I'm Prominent, Don't Use Me</uui-button
+        >
+      </div>
 
-    <pre>
+      <pre>
       <code>
           &lt;uui-button&gt;Click Me I'm Default&lt;/uui-button&gt;
           &lt;uui-button variant="subtle"&gt;Click Me I'm Subtle&lt;/uui-button&gt;
@@ -75,120 +79,127 @@
           &lt;uui-button variant="ghost"&gt;I'm Prominent, Don't Use Me&lt;/uui-button&gt;
       </code>
     </pre>
+    </uui-card>
   </article>
 
   <article>
-    <h6 id="uui-input">Input</h6>
-    <div style="width: 300px; margin-block-end: 40px">
-      <uui-input-title
-        for="test"
-        infoposition="right"
-        infotext="info text"
-        hasinfo
-      >
-        Title
-      </uui-input-title>
-      <uui-input-description>Input description</uui-input-description>
-      <uui-input
-        uuiFormAccessor
-        name="test"
-        type="text"
-        [(ngModel)]="textInputValue"
-      ></uui-input>
-      <p>Input value: {{ textInputValue }}</p>
-    </div>
-    <div style="width: 300px">
-      <uui-input-title
-        for="test"
-        infoposition="right"
-        infotext="info text"
-        hasinfo
-        error
-      >
-        Title
-      </uui-input-title>
-      <uui-input-error show>Error message</uui-input-error>
-      <uui-input value="test" name="test" type="text" error></uui-input>
-    </div>
-
-    <pre>
-        <code>
-            &lt;uui-input-title
-              for="test"
-              infoposition="right"
-              infotext="info text"
-              hasinfo
-            &gt;
-              Title
-            &lt;/uui-input-title&gt;
-            &lt;uui-input-description&gt;Input description&lt;/uui-input-description&gt;
-            &lt;uui-input name="test" type="text"&gt;&lt;/uui-input&gt;
-        </code>
-      </pre>
-  </article>
-
-  <article>
-    <h6 id="uui-checkbox">Checkbox</h6>
-    <div class="flex flex-column gap">
-      <div>
-        <p class="uui-large">Standalone</p>
-        <uui-checkbox
-          uuiFormAccessor
-          value="1"
-          name="cb-name"
-          id="cb-unique-id"
-          [(ngModel)]="checkboxValue"
+    <uui-card>
+      <h6 id="uui-input">Input</h6>
+      <div style="width: 300px; margin-block-end: 40px">
+        <uui-input-title
+          for="test"
+          infoposition="right"
+          infotext="info text"
+          hasinfo
         >
-          Standalone cb
-        </uui-checkbox>
-        <p class="mx-1">Checkbox value: {{ checkboxValue }}</p>
+          Title
+        </uui-input-title>
+        <uui-input-description>Input description</uui-input-description>
+        <uui-input
+          uuiFormAccessor
+          name="test"
+          type="text"
+          [(ngModel)]="textInputValue"
+        ></uui-input>
+        <p>Input value: {{ textInputValue }}</p>
+      </div>
+      <div style="width: 300px">
+        <uui-input-title
+          for="test"
+          infoposition="right"
+          infotext="info text"
+          hasinfo
+          error
+        >
+          Title
+        </uui-input-title>
+        <uui-input-error show>Error message</uui-input-error>
+        <uui-input value="test" name="test" type="text" error></uui-input>
       </div>
 
-      <div>
-        <p class="uui-large">Group</p>
-        <ul class="checkboxes">
-          <ng-container *ngFor="let cb of checkboxes">
-            <li>
-              <uui-checkbox
-                uuiFormAccessor
-                checked="{{ cb.checked }}"
-                value="{{ cb.value }}"
-                name="{{ cb.name }}"
-                id="{{ cb.id }}"
-                disabled="{{ cb.disabled }}"
-                error="{{ cb.error }}"
-              >
-                {{ cb.label }}
-              </uui-checkbox>
-            </li>
-          </ng-container>
-        </ul>
-      </div>
-    </div>
-
-    <pre>
+      <pre>
       <code>
-          &lt;uui-switch name="switch-a" id="switch-a"&gt;&lt;/uui-switch&gt;
+          &lt;uui-input-title
+            for="test"
+            infoposition="right"
+            infotext="info text"
+            hasinfo
+          &gt;
+            Title
+          &lt;/uui-input-title&gt;
+          &lt;uui-input-description&gt;Input description&lt;/uui-input-description&gt;
+          &lt;uui-input name="test" type="text"&gt;&lt;/uui-input&gt;
       </code>
     </pre>
+    </uui-card>
   </article>
 
   <article>
-    <h6 id="uui-switch">Switch</h6>
-    <div>
-      <uui-switch
-        uuiFormAccessor
-        name="switch-a"
-        id="switch-a"
-        [(ngModel)]="switchValue"
-      ></uui-switch>
-      <p>Switch value: {{ switchValue }}</p>
-    </div>
+    <uui-card>
+      <h6 id="uui-checkbox">Checkbox</h6>
+      <div class="flex flex-column gap">
+        <div>
+          <p class="uui-large">Standalone</p>
+          <uui-checkbox
+            uuiFormAccessor
+            value="1"
+            name="cb-name"
+            id="cb-unique-id"
+            [(ngModel)]="checkboxValue"
+          >
+            Standalone cb
+          </uui-checkbox>
+          <p class="mx-1">Checkbox value: {{ checkboxValue }}</p>
+        </div>
 
-    <pre>
+        <div>
+          <p class="uui-large">Group</p>
+          <ul class="checkboxes">
+            <ng-container *ngFor="let cb of checkboxes">
+              <li>
+                <uui-checkbox
+                  uuiFormAccessor
+                  checked="{{ cb.checked }}"
+                  value="{{ cb.value }}"
+                  name="{{ cb.name }}"
+                  id="{{ cb.id }}"
+                  disabled="{{ cb.disabled }}"
+                  error="{{ cb.error }}"
+                >
+                  {{ cb.label }}
+                </uui-checkbox>
+              </li>
+            </ng-container>
+          </ul>
+        </div>
+      </div>
+
+      <pre>
       <code>
           &lt;uui-switch name="switch-a" id="switch-a"&gt;&lt;/uui-switch&gt;
       </code>
     </pre>
+    </uui-card>
+  </article>
+
+  <article>
+    <uui-card>
+      <h6 id="uui-switch">Switch</h6>
+      <div>
+        <uui-switch
+          uuiFormAccessor
+          name="switch-a"
+          id="switch-a"
+          [(ngModel)]="switchValue"
+        ></uui-switch>
+        <p>Switch value: {{ switchValue }}</p>
+      </div>
+
+      <pre>
+      <code>
+          &lt;uui-switch name="switch-a" id="switch-a"&gt;&lt;/uui-switch&gt;
+      </code>
+    </pre>
+    </uui-card>
   </article>
 </div>
