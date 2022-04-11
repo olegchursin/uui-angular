@@ -1,5 +1,5 @@
 <div class="wrapper">
-  <h1>United UI web components</h1>
+  <h1>{{ title }}</h1>
 
   <h2>United UI</h2>
   <p>
@@ -17,34 +17,42 @@
 
   <h3>List of Components</h3>
   <ul>
-    <li><a href="#uui-alert">Alert</a></li>
-    <li><a href="#uui-button">Button</a></li>
-    <li><a href="#uui-input">Input</a></li>
+    <li><a class="uui-link" href="#uui-alert">Alert</a></li>
+    <li><a class="uui-link" href="#uui-button">Button</a></li>
+    <li><a class="uui-link" href="#uui-input">Input</a></li>
+    <li><a class="uui-link" href="#uui-switch">Switch</a></li>
   </ul>
 
   <article>
     <h6 id="uui-button">Alert</h6>
-    <div>
-      <uui-alert [type]="'contextual'" [header]="'Alert Header'"
+    <div class="flex flex-column gap">
+      <uui-alert [header]="'Notification'">Alert slotted content</uui-alert>
+      <uui-alert [variant]="'success'" [header]="'Success'"
+        >Alert slotted content</uui-alert
+      >
+      <uui-alert [variant]="'caution'" [header]="'Caution'"
+        >Alert slotted content</uui-alert
+      >
+      <uui-alert [variant]="'error'" [header]="'Error'"
         >Alert slotted content</uui-alert
       >
     </div>
 
     <pre>
-        <code>
-            &lt;uui-alert
-              [type]="'contextual'"
-              [header]="'Alert Header'"
-            &gt;
-              Alert slotted content
-            &lt;/uui-alert&gt;
-        </code>
-      </pre>
+      <code>
+          &lt;uui-alert
+            [variant]="'notification'"
+            [header]="'Notification'"
+          &gt;
+            Alert slotted content
+          &lt;/uui-alert&gt;
+      </code>
+    </pre>
   </article>
 
   <article>
     <h6 id="uui-button">Button</h6>
-    <div class="button-group">
+    <div class="flex gap">
       <uui-button (click)="handleButtonClick()"
         >Click Me I'm Default</uui-button
       >
@@ -60,13 +68,13 @@
     </div>
 
     <pre>
-        <code>
-            &lt;uui-button&gt;Click Me I'm Default&lt;/uui-button&gt;
-            &lt;uui-button variant="subtle"&gt;Click Me I'm Subtle&lt;/uui-button&gt;
-            &lt;uui-button variant="ghost"&gt;Click Me I'm Ghost&lt;/uui-button&gt;
-            &lt;uui-button variant="ghost"&gt;I'm Prominent, Don't Use Me&lt;/uui-button&gt;
-        </code>
-      </pre>
+      <code>
+          &lt;uui-button&gt;Click Me I'm Default&lt;/uui-button&gt;
+          &lt;uui-button variant="subtle"&gt;Click Me I'm Subtle&lt;/uui-button&gt;
+          &lt;uui-button variant="ghost"&gt;Click Me I'm Ghost&lt;/uui-button&gt;
+          &lt;uui-button variant="ghost"&gt;I'm Prominent, Don't Use Me&lt;/uui-button&gt;
+      </code>
+    </pre>
   </article>
 
   <article>
@@ -85,9 +93,9 @@
         uuiFormAccessor
         name="test"
         type="text"
-        [(ngModel)]="username"
+        [(ngModel)]="textInputValue"
       ></uui-input>
-      <p>Input value: {{ username }}</p>
+      <p>Input value: {{ textInputValue }}</p>
     </div>
     <div style="width: 300px">
       <uui-input-title
@@ -117,5 +125,70 @@
             &lt;uui-input name="test" type="text"&gt;&lt;/uui-input&gt;
         </code>
       </pre>
+  </article>
+
+  <article>
+    <h6 id="uui-checkbox">Checkbox</h6>
+    <div class="flex flex-column gap">
+      <div>
+        <p class="uui-large">Standalone</p>
+        <uui-checkbox
+          uuiFormAccessor
+          value="1"
+          name="cb-name"
+          id="cb-unique-id"
+          [(ngModel)]="checkboxValue"
+        >
+          Standalone cb
+        </uui-checkbox>
+        <p class="mx-1">Checkbox value: {{ checkboxValue }}</p>
+      </div>
+
+      <div>
+        <p class="uui-large">Group</p>
+        <ul class="checkboxes">
+          <ng-container *ngFor="let cb of checkboxes">
+            <li>
+              <uui-checkbox
+                uuiFormAccessor
+                checked="{{ cb.checked }}"
+                value="{{ cb.value }}"
+                name="{{ cb.name }}"
+                id="{{ cb.id }}"
+                disabled="{{ cb.disabled }}"
+                error="{{ cb.error }}"
+              >
+                {{ cb.label }}
+              </uui-checkbox>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+
+    <pre>
+      <code>
+          &lt;uui-switch name="switch-a" id="switch-a"&gt;&lt;/uui-switch&gt;
+      </code>
+    </pre>
+  </article>
+
+  <article>
+    <h6 id="uui-switch">Switch</h6>
+    <div>
+      <uui-switch
+        uuiFormAccessor
+        name="switch-a"
+        id="switch-a"
+        [(ngModel)]="switchValue"
+      ></uui-switch>
+      <p>Switch value: {{ switchValue }}</p>
+    </div>
+
+    <pre>
+      <code>
+          &lt;uui-switch name="switch-a" id="switch-a"&gt;&lt;/uui-switch&gt;
+      </code>
+    </pre>
   </article>
 </div>

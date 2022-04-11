@@ -3,9 +3,29 @@
   justify-content: center;
 }
 
-.button-group {
+.flex {
   display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.gap {
   gap: 1em;
+}
+
+.checkboxes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+.mx-1 {
+  margin-block-start: 1rem;
+  margin-block-end: 1rem;
 }
 
 article {
