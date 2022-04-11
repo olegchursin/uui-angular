@@ -1,6 +1,6 @@
-# UuiAngular
+# UUI Angular
 
-Making UUI work withy Angular.
+Making UUI work with Angular.
 
 Follow the steps in the UUI repo readme: https://github.com/AonUnited/AonDesignSystem#use-united-ui-in-your-project
 
