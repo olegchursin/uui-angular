@@ -128,7 +128,12 @@
             Title
           &lt;/uui-input-title&gt;
           &lt;uui-input-description&gt;Input description&lt;/uui-input-description&gt;
-          &lt;uui-input name="test" type="text"&gt;&lt;/uui-input&gt;
+          &lt;uui-input
+            uuiFormAccessor
+            name="test"
+            type="text"
+            [(ngModel)]="textInputValue"
+          &gt;&lt;/uui-input&gt;
       </code>
     </pre>
     </uui-card>
@@ -175,10 +180,18 @@
       </div>
 
       <pre>
-      <code>
-          &lt;uui-switch name="switch-a" id="switch-a"&gt;&lt;/uui-switch&gt;
-      </code>
-    </pre>
+        <code>
+          &lt;uui-checkbox
+            uuiFormAccessor
+            value="1"
+            name="cb-name"
+            id="cb-unique-id"
+            [(ngModel)]="checkboxValue"
+          &gt;
+            Standalone cb
+          &lt;/uui-checkbox&gt;
+        </code>
+      </pre>
     </uui-card>
   </article>
 
@@ -197,7 +210,12 @@
 
       <pre>
       <code>
-          &lt;uui-switch name="switch-a" id="switch-a"&gt;&lt;/uui-switch&gt;
+        &lt;uui-switch
+          uuiFormAccessor
+          name="switch-a"
+          id="switch-a"
+          [(ngModel)]="switchValue"
+        &gt;&lt;/uui-switch&gt;
       </code>
     </pre>
     </uui-card>
