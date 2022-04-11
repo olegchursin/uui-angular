@@ -48,6 +48,25 @@ export class AppComponent {
       checked: false
     }
   ];
+  radioButtonSelectedValue = '';
+  radiobuttons = [
+    {
+      value: 'rb-value-1',
+      label: 'Label 1'
+    },
+    {
+      value: 'rb-value-2',
+      label: 'Label 2'
+    }
+  ];
+
+  public handleRadioSelect(value: string) {
+    this.radioButtonSelectedValue = value;
+  }
+
+  public makeRadioId(value: string) {
+    return `uui-rb__${value}`;
+  }
 
   public handleButtonClick() {
     alert('Button clicked');

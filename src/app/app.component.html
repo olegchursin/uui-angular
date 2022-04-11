@@ -21,12 +21,13 @@
     <li><a class="uui-link" href="#uui-button">Button</a></li>
     <li><a class="uui-link" href="#uui-input">Input</a></li>
     <li><a class="uui-link" href="#uui-checkbox">Checkbox</a></li>
+    <li><a class="uui-link" href="#uui-radiobutton">Radio button</a></li>
     <li><a class="uui-link" href="#uui-switch">Switch</a></li>
   </ul>
 
-  <article>
+  <article id="uui-alert">
     <uui-card>
-      <h6 id="uui-button">Alert</h6>
+      <h6>Alert</h6>
       <div class="flex flex-column gap">
         <uui-alert [header]="'Notification'">Alert slotted content</uui-alert>
         <uui-alert [variant]="'success'" [header]="'Success'"
@@ -41,21 +42,21 @@
       </div>
 
       <pre>
-          <code>
-              &lt;uui-alert
-                [variant]="'notification'"
-                [header]="'Notification'"
-              &gt;
-                Alert slotted content
-              &lt;/uui-alert&gt;
-          </code>
-        </pre>
+        <code>
+          &lt;uui-alert
+            [variant]="'notification'"
+            [header]="'Notification'"
+          &gt;
+            Alert slotted content
+          &lt;/uui-alert&gt;
+        </code>
+      </pre>
     </uui-card>
   </article>
 
-  <article>
+  <article id="uui-button">
     <uui-card>
-      <h6 id="uui-button">Button</h6>
+      <h6>Button</h6>
       <div class="flex gap">
         <uui-button (click)="handleButtonClick()"
           >Click Me I'm Default</uui-button
@@ -72,19 +73,19 @@
       </div>
 
       <pre>
-      <code>
+        <code>
           &lt;uui-button&gt;Click Me I'm Default&lt;/uui-button&gt;
           &lt;uui-button variant="subtle"&gt;Click Me I'm Subtle&lt;/uui-button&gt;
           &lt;uui-button variant="ghost"&gt;Click Me I'm Ghost&lt;/uui-button&gt;
           &lt;uui-button variant="ghost"&gt;I'm Prominent, Don't Use Me&lt;/uui-button&gt;
-      </code>
-    </pre>
+        </code>
+      </pre>
     </uui-card>
   </article>
 
-  <article>
+  <article id="uui-input">
     <uui-card>
-      <h6 id="uui-input">Input</h6>
+      <h6>Input</h6>
       <div style="width: 300px; margin-block-end: 40px">
         <uui-input-title
           for="test"
@@ -118,7 +119,7 @@
       </div>
 
       <pre>
-      <code>
+        <code>
           &lt;uui-input-title
             for="test"
             infoposition="right"
@@ -134,14 +135,14 @@
             type="text"
             [(ngModel)]="textInputValue"
           &gt;&lt;/uui-input&gt;
-      </code>
-    </pre>
+        </code>
+      </pre>
     </uui-card>
   </article>
 
-  <article>
+  <article id="uui-checkbox">
     <uui-card>
-      <h6 id="uui-checkbox">Checkbox</h6>
+      <h6>Checkbox</h6>
       <div class="flex flex-column gap">
         <div>
           <p class="uui-large">Standalone</p>
@@ -159,7 +160,7 @@
 
         <div>
           <p class="uui-large">Group</p>
-          <ul class="checkboxes">
+          <ul>
             <ng-container *ngFor="let cb of checkboxes">
               <li>
                 <uui-checkbox
@@ -195,9 +196,44 @@
     </uui-card>
   </article>
 
-  <article>
+  <article id="uui-radiobutton">
     <uui-card>
-      <h6 id="uui-switch">Switch</h6>
+      <h6>Radio button</h6>
+      <ul>
+        <ng-container *ngFor="let rb of radiobuttons">
+          <li>
+            <uui-radiobutton
+              uuiFormAccessor
+              [attr.name]="'uui-rbs'"
+              [value]="rb.value"
+              [checked]="rb.value === radioButtonSelectedValue"
+              [radioid]="makeRadioId(rb.value)"
+              [attr.id]="makeRadioId(rb.value)"
+              (toggleChange)="handleRadioSelect(rb.value)"
+            >
+              {{ rb.label }}
+            </uui-radiobutton>
+          </li>
+        </ng-container>
+      </ul>
+      <p class="mx-1">Radio button value: {{ radioButtonSelectedValue }}</p>
+
+      <pre>
+        <code>
+          &lt;uui-switch
+            uuiFormAccessor
+            name="switch-a"
+            id="switch-a"
+            [(ngModel)]="switchValue"
+          &gt;&lt;/uui-switch&gt;
+        </code>
+      </pre>
+    </uui-card>
+  </article>
+
+  <article id="uui-switch">
+    <uui-card>
+      <h6>Switch</h6>
       <div>
         <uui-switch
           uuiFormAccessor
@@ -209,15 +245,15 @@
       </div>
 
       <pre>
-      <code>
-        &lt;uui-switch
-          uuiFormAccessor
-          name="switch-a"
-          id="switch-a"
-          [(ngModel)]="switchValue"
-        &gt;&lt;/uui-switch&gt;
-      </code>
-    </pre>
+        <code>
+          &lt;uui-switch
+            uuiFormAccessor
+            name="switch-a"
+            id="switch-a"
+            [(ngModel)]="switchValue"
+          &gt;&lt;/uui-switch&gt;
+        </code>
+      </pre>
     </uui-card>
   </article>
 </div>
